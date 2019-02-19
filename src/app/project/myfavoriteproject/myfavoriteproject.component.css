@@ -1,0 +1,36 @@
+.soldan{
+    margin-left: 280px;
+}
+
+.rightAddButton{
+    margin-left: 600px;
+    width:200px; 
+    margin-bottom: 5px;
+    
+}
+
+.yukaridan{
+    margin-top: 10px;
+}
+
+.insertButton{
+    width:150px; 
+    margin-bottom: 5px;
+}
+
+.asagı{
+    margin-top: 15px;
+}
+
+.AddButtonDown{
+    margin-top: px;
+}
+
+.footer {
+    position: static;
+   left: 0;
+   margin-bottom: 0;
+   width: 100%;
+   text-align: center;
+   background-color: #efefef;   
+}

@@ -1,0 +1,34 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+<div *ngIf="isAuthenticated">
+  <br>
+  <h1 class="soldan"><b>Projelerim</b> </h1>
+  <button class="insertButton AddButtonDown" ><a href="projectadd" style="color:black">Projeyi Ekle</a> </button>
+  <button class="rightAddButton AddButtonDown" ><a href="myfavoriteprojects" style="color:black">Beğendiğim Projeler</a> </button>
+  
+  <br>
+  <br>
+  <table class="table " >
+      <th></th>
+      <th>Proje Adı </th>
+      <th>Proje Açıklaması  </th>
+      <th>Proje Puanı  </th>
+      <th></th>
+      <tr *ngFor="let project of project"> 
+        <td></td>
+        <td>{{project.projectName}}</td>
+        <td>{{project.projectDescription}}</td>
+        <td>{{project.projectScore}}  </td>
+        <td><a href="{{project.projectUrl}}" style="color:black">Proje Adresine Git</a></td>
+        <button class="asagı" *ngIf="isAuthenticated" (click)="deleteProject(project.projectID)"  >Projeyi Sil</button>
+      </tr>
+    </table>
+  </div>
+  <div *ngIf="!isAuthenticated">
+    <h1>Error 404</h1>
+<p>Page not found</p>
+<a class="nav-link"  href="projects" style="color:black">Ana Sayfaya Dön</a>
+
+
+</div>
+

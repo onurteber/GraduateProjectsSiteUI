@@ -1,0 +1,16 @@
+.footer {
+    position: static;
+   left: 0;
+   margin-bottom: 0;
+   width: 100%;
+   text-align: center;
+   background-color: #efefef;   
+}
+
+.leftmargin{
+    margin-left: 350px;
+}
+
+.topmargin{
+    margin-top: 20px;
+}

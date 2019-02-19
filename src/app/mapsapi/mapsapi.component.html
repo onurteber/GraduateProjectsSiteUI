@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+<div *ngIf="isAuthenticated" style="margin-top: 15px; margin-bottom: 15px">
+  <agm-map [zoom]="14" [latitude]=universities.latitude [longitude]=universities.longitude>
+    <agm-marker [latitude]=universities.latitude [longitude]=universities.longitude setZoom="100"></agm-marker>
+  </agm-map>
+  </div> 
+  
+  
+  <div *ngIf="!isAuthenticated">
+      <h1>Error 404</h1>
+  <p>Page not found</p>
+  <a class="nav-link"  href="projects" style="color:black">Ana Sayfaya Dön</a>
+  
+  </div>
+  

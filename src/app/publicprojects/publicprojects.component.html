@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<br>
+<h2 class="soldan ">Projeler</h2>
+<br>
+<table class="table ">
+  <tr>
+    <td></td>
+    <th>Proje Adı </th>
+    <th>Akademik Personel</th>
+    <th>Proje Açıklaması  </th>
+    <th>Proje Puanı  </th>
+    <th>Proje Sahibi</th>
+  </tr>
+    <tr *ngFor="let project of projects"> 
+      <td></td>
+      <td>{{project.projectName}}</td>
+      <td>{{project.academicalPersonalName}}</td>
+      <td>{{project.projectDescription}}</td>
+      <td>{{project.studentNameandSurname}}</td>
+      <td>{{project.projectScore}}  </td>      
+      <button  *ngIf="isAuthenticated" (click)="scoreArttir(project.projectID,project.studentID)"   onclick="location.reload()" class="far fa-thumbs-up soldanicon yukaridan"></button>
+      <button  *ngIf="isAuthenticated" (click)="scoreAzalt(project.projectID,project.studentID)" onclick="location.reload()"  class="far fa-thumbs-down soldanicon yukaridan"></button>
+      <td><a href="{{project.projectUrl}}" style="color:black" >Proje Adresine Git</a></td>
+    <!--  <td>{{project.projectScore}}<a href="deneme"><span class="glyphicon glyphicon-thumbs-up soladayali"></span></a>
+         <a href="deneme"><span class="glyphicon glyphicon-thumbs-down soladayali"></span></a></td>-->
+    </tr>
+  </table>

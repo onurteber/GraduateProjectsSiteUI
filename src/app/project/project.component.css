@@ -1,0 +1,19 @@
+.soldan{
+    margin-left: 235px;
+}
+.soldanicon{
+    margin-left: 5px;
+}
+.footer {
+    position: static;
+   left: 0;
+   margin-bottom: 0;
+   width: 100%;
+   text-align: center;
+   background-color: #efefef;   
+}
+
+
+.yukaridan{
+    margin-top: 15px;
+}

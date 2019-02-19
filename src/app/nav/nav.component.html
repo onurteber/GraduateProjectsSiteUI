@@ -1,0 +1,39 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item ">
+        <a class="nav-link" href="publicprojects">Projeler </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" *ngIf="isAuthenticated" href="myprojects">Benim Sayfam</a>
+      </li> 
+      <li class="nav-item">
+        <a class="nav-link" *ngIf="isAuthenticated" href="project">En Çok Oy Alan 10 Proje</a>
+      </li>                 
+      <li class="nav-item">
+          <a class="nav-link" *ngIf="isAuthenticated" href="universite">Üniversiteler</a>
+        </li>
+      <li class="nav-item">
+        <a class="nav-link" *ngIf="isAuthenticated" href="departments">Departmanlar </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" *ngIf="!isAuthenticated" href="register">Kayıt Ol</a>
+      </li>
+    </ul>
+    <!-- Tek satırlı yorum, bu içerik tarayıcıda görüntülenmez. -->
+    <form *ngIf="!isAuthenticated" #loginForm="ngForm" (ngSubmit)="login()"  class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" name="Email" 
+        [(ngModel)]="loginUser.Email" required type="text" placeholder="Email">
+        <input class="form-control mr-sm-2" name="password" 
+        [(ngModel)]="loginUser.password" required type="password" placeholder="Password">
+        <button class="btn btn-secondary my-2 my-sm-0" [disabled]="!loginForm.valid"  type="submit">Giriş</button>
+      </form>
+      <button class="btn btn-secondary my-2 my-sm-0" *ngIf="isAuthenticated" (click)="logOut()"  type="submit">Çıkış</button>
+    
+  </div>
+</nav>

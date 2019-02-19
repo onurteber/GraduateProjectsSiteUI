@@ -1,0 +1,15 @@
+.soldan{
+    margin-left: 400px;
+}
+
+.yukaridan{
+    margin-top: 15px;
+}
+.footer {
+    position: static;
+   left: 0;
+   margin-bottom: 0;
+   width: 100%;
+   text-align: center;
+   background-color: #efefef;   
+}

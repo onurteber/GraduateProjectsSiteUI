@@ -1,0 +1,16 @@
+.soldan{
+    margin-left: 575px;
+}
+
+.top{
+    margin-top: 33px;
+}
+
+.footer {
+    position: static;
+   left: 0;
+   margin-bottom: 0;
+   width: 100%;
+   text-align: center;
+   background-color: #efefef;   
+}

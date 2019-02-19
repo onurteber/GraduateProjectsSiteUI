@@ -1,0 +1,13 @@
+.footer {
+    position: static;
+   left: 0;
+   margin-bottom: 0;
+   width: 100%;
+   text-align: center;
+   
+}
+
+.top{
+    margin-bottom: 0;
+    position: static;
+}

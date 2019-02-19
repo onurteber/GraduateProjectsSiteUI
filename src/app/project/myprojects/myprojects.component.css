@@ -1,0 +1,32 @@
+.soldan{
+    margin-left: 529px;
+}
+
+.rightAddButton{
+    margin-left: 892px;
+    width:200px; 
+    margin-bottom: 5px;
+    
+}
+
+.insertButton{
+    width:150px; 
+    margin-bottom: 5px;
+}
+
+.asagı{
+    margin-top: 15px;
+}
+
+.AddButtonDown{
+    margin-top: px;
+}
+
+.footer {
+    position: static;
+   left: 0;
+   margin-bottom: 0;
+   width: 100%;
+   text-align: center;
+   background-color: #efefef;   
+}

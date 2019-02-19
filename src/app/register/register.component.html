@@ -1,0 +1,85 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+<form [formGroup]="registerForm" (ngSubmit)="register()" class="form-register" *ngIf="!isAuthenticated" >
+  <h2 class="mt-5 soldan"><b>Kayıt ol</b></h2>
+  <br />
+  <div class="form-group">
+    <label>Kullanıcı Adı</label>
+    <input type="text" id="StudentName" name="StudentName" formControlName="StudentName" class="form-control"  autofocus>
+    <span class="help-block color" *ngIf="registerForm.get('StudentName').hasError('required') && registerForm.get('StudentName').touched">
+      Kullanıcı Adı gerekli
+    </span>
+  </div>
+  <div class="form-group">
+      <label>Kullanıcı Soyadı</label>
+    <input type="text" id="StudentLastName" name="StudentLastName" formControlName="StudentLastName" class="form-control" >
+    <span class="help-block color" *ngIf="registerForm.get('StudentLastName').hasError('required') && registerForm.get('StudentLastName').touched">
+      Kullanıcı Soyadı gerekli
+    </span>
+  </div>
+  <div class="form-group">
+      <label>Email</label>
+    <input type="text" id="Email" name="Email" formControlName="Email" class="form-control"  >
+    <span class="help-block color" *ngIf="registerForm.get('Email').hasError('required') && registerForm.get('Email').touched">
+      Email gerekli
+    </span>
+  </div>
+  <div class="form-group">
+      <label>Üniversite Adını Seçiniz</label>
+    <select formControlName="UniversityID" id="UniversityID" name="UniversityID" class="form-control" >
+      <option *ngFor="let k of this.universities" [value]="k.universityID">
+        {{k.universityName}}
+      </option>
+    </select>
+    <span class="help-block color" *ngIf="registerForm.get('StudentLastName').hasError('required') && registerForm.get('StudentLastName').touched">
+        Lütfen Öğrencisi Olduğunuz Ya Da Bitirdiğiniz Üniversiteyi Seçiniz
+      </span>
+  </div>
+  <div class="form-group">
+      <label>Bağlı Olduğunuz Departmanı Seçiniz</label>
+    <select formControlName="DepartmentID" id="DepartmentID" name="DepartmentID"  class="form-control"  >
+      <option *ngFor="let k of this.departments" [value]="k.departmentID" >
+        {{k.departmentName}}
+      </option>
+    </select>
+    <span class="help-block color" *ngIf="registerForm.get('StudentLastName').hasError('required') && registerForm.get('StudentLastName').touched">
+        Lütfen Bağlı Olduğunuz Departmanı Seçiniz
+    </span>
+  </div>        
+  <div class="form-group">
+      <label>Şife</label>
+    <input type="password" id="password" name="password" formControlName="password" class="form-control" >
+    <span class="help-block" *ngIf="registerForm.get('password').hasError('required') && registerForm.get('password').touched">
+      Şifre gerekli
+    </span>
+    <span class="help-block color" *ngIf="registerForm.get('password').hasError('minlength') && registerForm.get('password').touched">
+      Şifre en az 4 karakter olmalıdır
+    </span>
+    <span class="help-block color" *ngIf="registerForm.get('password').hasError('maxlength') && registerForm.get('password').touched">
+      Şifre 8 karakteri geçemez
+    </span>
+  </div>
+  <div class="form-group">
+      <label>Şifre Tekrarı</label>
+    <input type="password" id="confirmPassword" name="confirmPassword" formControlName="confirmPassword" class="form-control">
+    <span class="help-block color" *ngIf="registerForm.get('confirmPassword').hasError('required') && registerForm.get('confirmPassword').touched">
+      Şifre doğrulama gerekli
+    </span>
+    <span class="help-block color" *ngIf="registerForm.get('confirmPassword').touched 
+            && registerForm.hasError('mismatch')">
+      Şifreler uyumsuz
+    </span>
+  </div>
+  <div>
+      <input type="checkbox" formControlName="sozlesme"> Üyelik Sözleşmesini Kabul Ediyorum
+  </div>
+  <br/>
+  <button class="btn btn-lg btn-primary btn-block" [disabled]="!registerForm.valid" type="submit">Register</button>
+  <!--<h6>{{registerForm.value|json}}</h6>
+  <h6>{{registerForm.status|json}}</h6>-->
+</form>
+<form *ngIf="isAuthenticated">
+  <h1>Error 404</h1>
+  <p>Page not found</p>
+  <a class="nav-link"  href="projects" style="color:black">Ana Sayfaya Dön</a>
+</form>

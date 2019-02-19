@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+<strong><h2 class="leftmargin topmargin"> Projeler</h2></strong>
+<table class="table ">
+  <tr>   
+    <th>Proje Adı </th>
+    <th>Akademik Personel</th>
+    <th>Proje Açıklaması  </th>
+    <th>Proje Sahibi</th>
+    <th>Proje Puanı  </th>
+    <th>Departman Adı</th>
+  </tr>
+    <tr *ngFor="let project of project"> 
+        <td>{{project.projectName}}</td>
+        <td>{{project.academicalPersonalName}}</td>
+        <td>{{project.projectDescription}}</td>
+        <td>{{project.studentNameandSurname}}</td>
+        <td>{{project.projectScore}}  </td>  
+        <td>{{project.departmentName}}</td>
+      <td><a href="{{project.projectUrl}}" style="color:black">Proje Adresine Git</a></td>
+    </tr>
+</table>
+
+  <div *ngIf="!isAuthenticated">
+      <h1>Error 404</h1>
+  <p>Page not found</p>
+  <a class="nav-link"  href="projects" style="color:black">Ana Sayfaya Dön</a>
+  </div>
+  

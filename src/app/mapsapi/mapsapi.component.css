@@ -1,0 +1,12 @@
+agm-map {
+    height: 700px;
+    
+}
+.footer {
+    position: static;
+   left: 0;
+   margin-bottom: 0;
+   width: 100%;
+   text-align: center;
+   background-color: #efefef;   
+}
